@@ -6,56 +6,89 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE HTML>
 <head>
-<title>Ui kits  webtemplate for high end mobiles, like samsung, nokia, lg, sony erricsson, htc mobile website templates for free | Home :: w3layouts</title>
+<title>Ui kits for Iphone, Android and Smartphone Website Templates | Home :: w3layouts</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
-<link href="css/clndr.css" rel="stylesheet" type="text/css" media="all"/>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+<script type="text/javascript" src="js/Chart.js"></script>
+ <script type="text/javascript" src="js/jquery.easing.js"></script>
+ <script type="text/javascript" src="js/jquery.ulslide.js"></script>
+ <!----Calender -------->
+  <link rel="stylesheet" href="css/clndr.css" type="text/css" />
+  <script src="js/underscore-min.js"></script>
+  <script src= "js/moment-2.2.1.js"></script>
+  <script src="js/clndr.js"></script>
+  <script src="js/site.js"></script>
+  <!----End Calender -------->
+  <link type="text/css" href="css/mmenu.css" rel="stylesheet" media="all" />
+<script type="text/javascript" src="js/jquery.mmenu.min.js"></script>
+<script type="text/javascript">
+		$(function() {
+			$('nav#menu').mmenu();
+		});
+	</script>
 </head>
 <body>			       
 	    <div class="wrap">	 
 	      <div class="header">
-	      	  <div class="header_top">					
+	      	  <div class="header_top">
+	      	     	<div class="menu-ico"><a href="#menu"></a></div>
 					  <div class="profile_details">
+				    		   <div id="loginContainer">
+				                  <a id="loginButton" class=""><span>Me</span></a>   
+				                    <div id="loginBox">                
+				                      <form id="loginForm">
+				                        <fieldset id="body">
 				                            <div class="user-info">
 							        			<h4>Hello,<a href="#"> Username</a></h4>
 							        			<ul>
 							        				<li class="profile active"><a href="#">Profile </a></li>
-							        				<li> | </li>
 							        				<li class="logout"><a href="#"> Logout</a></li>
 							        				<div class="clear"></div>		
 							        			</ul>
 							        		</div>			                            
-				               <div class="profile_img">	
-				             	   <a href=""><img src="images/profile_img40x40.jpg" alt="" />	</a>
-				                </div>		
+				                        </fieldset>
+				                    </form>
+				                </div>
+				            </div>
+				             <div class="profile_img">	
+				             	<a href=""><img src="images/profile_img40x40.jpg" alt="" />	</a>
+				             </div>		
 				             <div class="clear"></div>		  	
 					    </div>	
 		 		      <div class="clear"></div>				 
 				   </div>
 			</div>	  					     
-	</div>
+	   </div>	  				 
 	  <div class="main">  
 	    <div class="wrap">  		 
-	       <div class="column_left">	          
+	       <div class="column_left">	
+	       	  <!---         
 	    		 <div class="menu_box">
 	    		 	 <h3>Menu Box</h3>
 	    		 	   <div class="menu_box_list">
 				      		<ul>
-				      			<li><a href="#" class="account"><span>Account</span></a></li>		
 						  		<li><a href="#" class="messages"><span>Messages</span><label class="digits">24</label><div class="clear"></div></a></li>
 						  		<li class="active"><a href="#" class="invites"><span>Invites</span><label class="digits active">3</label><div class="clear"></div></a></li>
 						  		<li><a href="#" class="events"><span>Events</span><label class="digits">5</label><div class="clear"></div></a></li>
 						  		<li><a href="#" class="account_settings"><span>Account Settings</span></a></li>
-						  		<li><a href="#" class="statistics"><span>Statistics</span></a></li>
-						  		 <li><a href="#" class="favorites"><span>Favorites</span></a></li>	
-						  		<li><a href="#" class="Settings"><span>Settings</span></a></li>							  					    		   
+						  		<li><a href="#" class="statistics"><span>Statistics</span></a></li>						  	
 				    		</ul>
 				      </div>
 	    		 </div>
+	    		 ----->
 	    		 <div class="chart">
 		               <h3>Os Audience Stats</h3>
-						     <span><img src="images/chart.png" alt="" /></span>
+		                  <div class="diagram">
+		                  <canvas id="canvas" height="220" width="220"> </canvas>
+		                  <h4><span>June</span><br />2013</h4>   
+		                 </div>
+		               <!----		              
+						<span><img src="images/chart.png" alt="" /></span>
+						----->					
 						<div class="chart_list">
 			           	  <ul>
 			           	  	<li><a href="#" class="red">ios<p class="percentage">21<em>%</em></p></a></li>
@@ -64,10 +97,53 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			           	  	<li><a href="#" class="blue">Win<p class="percentage">32<em>%</em></p></a></li>
 			           	  	<div class="clear"></div>	
 			           	  </ul>
-			           </div>			           
+			           </div>
+			           <script>
+						var doughnutData = [
+								{
+									value: 21,
+									color:"#E64C65"
+								},
+								{
+									value : 48,
+									color : "#11A8AB"
+								},							
+								{
+									value : 32,
+									color : "#4FC4F6"
+								},	
+								{
+									value : 9,
+									color : "#FCB150"
+								},							
+							
+							];				
+							var myDoughnut = new Chart(document.getElementById("canvas").getContext("2d")).Doughnut(doughnutData);					
+					</script>
 		          </div>
-		             <div class="graph">		             	
+		             <div class="graph">
+		             	<canvas id="line-chart"> </canvas>
+		             	<script>
+							var lineChartData = {
+								labels : ["Apr","May","Jun"],
+								datasets : [									
+									{
+										fillColor : "rgba(255, 255, 255, 0)",
+										strokeColor : "#FFF",
+										pointColor : "#11a8ab",
+										pointStrokeColor : "#FFF",
+										data : [21,48,35]
+									}
+								]
+								
+							}
+					
+						var myLine = new Chart(document.getElementById("line-chart").getContext("2d")).Line(lineChartData);
+						
+						</script>
+		             	<!---
 		             	<img src="images/graph.png" alt="" />
+		             	------->
 		             	<div class="graph_list">
 		             		 <div class="week-month-year">
 		             		 	<p><a href="#">Week</a></p>
@@ -88,7 +164,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		                 <!--div class="video_palyer">
 								<iframe src="//player.vimeo.com/video/24363983" width="100%" height="150px" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe> 
 		                </div-->        
-		     	          
+		            
+		          
 		          		<div class="social_network_likes">
 				      		<ul>
 				      			<li><a href="#" class="facebook"><i><img src="images/facebook_icon.png" alt=""></i> <span>248k</span></a></li>
@@ -222,90 +299,80 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         </ul>
 				   </div>
 				   <div class="column_right_grid date_events">
-				     	  <h3><a href="#" id="slide_prev"><img src="images/arrow-left.png" alt="" /></a> <em>Wednesday</em> <a href="#" id="slide_next"><img src="images/arrow-right.png" alt="" /></a></h3>
-				     	 		<ul class="event_dates">
-						            <li>26</li>						           
+				     	  <h3><a href="#" id="slide_prev"><img src="images/arrow-left.png" alt="" /></a> Wednesday <a href="#" id="slide_next"><img src="images/arrow-right.png" alt="" /></a></h3>
+				     	 		<ul id="slide" class="event_dates">					            
+						            <li>26</li>
+						            <li>25</li>
+						            <li>24</li>
+						            <li>23</li>
+						            <li>22</li>
+						            <li>21</li>
+						            <li>20</li>
+						            <li>19</li>
+						            <li>18</li>
+						            <li>17</li>
+						            <li>16</li>
+						            <li>15</li>
+						            <li>14</li>
+						            <li>13</li>
+						            <li>12</li>
+						            <li>11</li>
+						            <li>10</li>
+						            <li>9</li>
+						            <li>8</li>
+						            <li>7</li>
+						            <li>6</li>
+						            <li>5</li>
+						            <li>4</li>
+						            <li>3</li>
+						            <li>2</li>
+						            <li>1</li>
+						            <li>31</li>
+						            <li>30</li>
+						            <li>29</li>
+						            <li>28</li>
+						            <li>27</li>
 						        </ul>
-						         <div class="button"><a href="#">Add Event</a></div>											 								           
+						         <div class="button"><a href="#">Add Event</a></div>											 				
+				           <script type="text/javascript">
+				            $(function() {						
+				                $('#slide').ulslide({
+				                   
+									effect: {
+										type: 'carousel', // slide or fade
+				                        axis: 'x',        // x, y
+										showCount:1
+									},
+				                    nextButton: '#slide_next',
+				                    prevButton: '#slide_prev',
+				                    duration: 800,
+				                    /*autoslide: 2000,*/
+									easing: 'easeOutBounce'
+				                });
+				            });
+				        </script>
 				    </div>
 				   <div class="column_right_grid calender">
-				   	<div id="calendar">
-					<div class="c-title dark-gray-3level">
-						<div class="left-button"><img src="images/arrow-left.png" alt="" /> </div>						
-						<div class="title">November 2013</div>
-						<div class="right-button"><img src="images/arrow-right.png" alt="" /></div>
-						<div class="clear"></div>
-					</div>
-
-					<table class="c-days">
-					   <thead class="light-gray">
-						  <tr>
-							<th>S</th>
-							<th>M</th>
-							<th>T</th>
-							<th>W</th>
-							<th>T</th>
-							<th>F</th>
-							<th>S</th>
-						  </tr>
-					   </thead>
-					   <tbody>
-					   		<tr class="simple-lightgray">
-					   			<td class="other-month"><span>27</span></td>
-					   			<td class="other-month"><span>28</span></td>
-					   			<td class="other-month"><span>29</span></td>
-					   			<td class="other-month"><span>30</span></td>
-					   			<td class="other-month"><span>31</span></td>
-					   			<td><span>1</span></td>
-					   			<td><span>2</span></td>					   			
-					   		</tr>
-					   		<tr class="simple-lightgray">
-					   			<td><span>3</span></td>
-					   			<td><span>4</span></td>
-					   			<td><span>5</span></td>
-					   			<td><span>6</span></td>
-					   			<td><span>7</span></td>
-					   			<td><span>8</span></td>
-					   			<td><span>9</span></td>					   			
-					   		</tr>
-					   		<tr class="simple-lightgray">
-					   			<td><span>10</span></td>
-					   			<td><span>11</span></td>
-					   			<td><span>12</span></td>
-					   			<td><span>13</span></td>
-					   			<td><span>14</span></td>
-					   			<td><span>15</span></td>
-					   			<td><span>16</span></td>					   			
-					   		</tr>
-					   		<tr class="simple-lightgray">
-					   			<td><span>17</span></td>
-					   			<td><span>18</span></td>
-					   			<td><span>19</span></td>
-					   			<td><span>20</span></td>
-					   			<td><span>21</span></td>
-					   			<td><span>22</span></td>
-					   			<td class="today"><span>23</span></td>				   			
-					   		</tr>
-					   		<tr class="simple-lightgray">
-					   			<td><span>24</span></td>
-					   			<td><span>25</span></td>
-					   			<td><span>26</span></td>
-					   			<td><span>27</span></td>
-					   			<td><span>28</span></td>
-					   			<td><span>29</span></td>
-					   			<td><span>30</span></td>
-					   		</tr>
-					   </tbody>
-					</table>
-				</div>
+                      <div class="cal1"> </div>
 				   </div>
              </div>
     	<div class="clear"></div>
  	 </div>
    </div>   
-    	<div class="copy-right">
+   					<nav id="menu">
+							<ul>
+								<li><a href="#"><i><img src="images/user.png"></i> Profile</a></li>
+								<li><a href="#"><span><i><img src="images/mail.png"></i> Messages</span><label class="digits active">5</label><div class="clear"></div></a></li>
+						  		<li><a href="#"><span> <i><img src="images/invites.png"></i> Invites</span><label class="digits">3</label><div class="clear"></div></a></li>
+						  		<li><a href="#"><span> <i><img src="images/events.png"></i> Events</span><label class="digits">5</label><div class="clear"></div></a></li>
+						  		<li><a href="#"><i><img src="images/favourite.png" alt="" /></i>Favorites</a></li>
+						  		<li><a href="#"><span><i><img src="images/statistics.png"></i>  Statistics</span></a></li>		
+								<li><a href="#"><i><img src="images/settings.png" alt="" /></i>Settings</a></li>																
+							</ul>
+					 </nav>
+		 <div class="copy-right">
 				<p>© 2013 Designed by <a href="http://graphicburger.com/flat-design-ui-components/" target="_blank">GraphicBurger</a>  • Template by <a href="http://w3layouts.com" target="_blank">w3layouts</a> </p>
-	 	 </div>  
+	 	 </div>   
 </body>
 </html>
 
